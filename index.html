@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
         <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
         <link rel = "stylesheet" href = "css/styles.css" />
+        <link rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Lobster" />
     
         <title>NuCamp: A Better Way To Camp</title>
     </head>
@@ -22,12 +23,20 @@
     <header class = "jumbotron jumbotron-fluid">
         <div class = "container">
             <div class = "row">
-            <h1>NuCamp</h1>
-            <h2>a better way to camp</h2>
-            </div>
-            <div class="col-4 col-sm-3 col-md-2 align-self-center">
-                <img src="img/logo.png" class="img-fluid" />
-             </div>
+                <div class="col-4 col-sm-3 col-md-2 align-self-center">
+                    <img src="img/logo.png" class="img-fluid" />
+                 </div>
+                 <div class = "col">
+                    <h1>NuCamp</h1>
+                    <h2>a better way to camp</h2>
+                </div>
+                <div class = "col-md-4 col-xl-2 mt-4">
+                    <!-- nowrap ENSURES THE TEXT IN THE BUTTON REMAINS IN ONE LINE-->
+                    <a href = "#reserveForm" class = "text-nowrap btn btn-info btn-lg">Reserve Campsite
+                        <!--<button type = "submit" class = "btn btn-info btn-lg">Reserve Campsite</button>-->
+                    </a>
+                </div>
+            </div> 
         </div>
     </header>
 
@@ -74,8 +83,13 @@
                 <h2>Featured Campsites</h2>
             </div>
             <div class = "col">
-                <h3>React Lake Campground</h3>
-                <p>Nestled in the foothills of the Chrome Mountains, this campground on the shores of the pristine React Lake is a favorite for fly fishers.</p>
+                <div class = "media">
+                    <img class = "d-flex order-sm-last ml-3 img-thumbnail" src = "img/react-lake-thumb.jpg" alt = "Breadcrumb Trail" />
+                    <div class = "media-body align-self-center">
+                        <h3>React Lake Campground</h3>
+                        <p>Nestled in the foothills of the Chrome Mountains, this campground on the shores of the pristine React Lake is a favorite for fly fishers.</p>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -94,7 +108,52 @@
             </div>
         </div>
 
-    </div>
+        <div class = "row row-content">
+            <div class = "col col-sm-6 mx-auto ">
+                <div class = "card border" >
+                    <h3 class = "text-light bg-info card-header">Reserve a Campsite</h3> <!-- teal background, text white-->
+                    <div class = "card-body">
+                        <form id = "reserveForm">
+                            <div class = "row form-group">
+                                    <label for = "selectNumCampers" class = "col-form-label col-sm-6">Number of Campers</label>
+                                
+                                <div class = "col">
+                                    <select class = "form-control" name = "selectNumCampers" id = "numCampers">
+                                        <option value = "Select...">Select...</option>
+                                        <option value = "1">1</option>
+                                        <option value = "2">2</option>
+                                        <option value = "3">3</option>
+                                        <option value = "4">4</option>
+                                        <option value = "5">5</option>
+                                        <option value = "6">6</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <div class = "row form-group">
+                                    <label for = "selectDate"  class = "col-form-label col-sm-6" id = "date" type = "date" name = "date">Date</label>
+
+                                <div class = "col-sm-6">
+                                    <input class = "form-control" type = "date"  id = "date" name = "date">
+                                </div>
+                            </div>
+                            
+                            <div class = "row form-group">
+                                <div class = "col">
+                                    <button type = "submit" class = "btn btn-primary">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </div> <!-- container end statement-->
 
     <footer class = "site-footer">
         <div class = "container">
